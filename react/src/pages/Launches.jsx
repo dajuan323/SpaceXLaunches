@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react";
-import launchServices from "../services/launchServices";
+import React, { useEffect } from "react";
 import { Card, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchLaunches } from "../app/launchSlice";
 
 function Launches() {
-  const launches = useSelector((state) => state.launches.launches);
-
-  const [launches, setLaunches] = useState([]);
+  const dispatch = useDispatch();
+  const { launches, loading, error } = useSelector((state) => state.launches);
 
   useEffect(() => {
-    launchServices
-      .get(25, 0)
-      .then(onGetLaunchesSuccess)
-      .catch(onGetLaunchesError);
-  }, []);
+    dispatch(fetchLaunches());
+  }, [dispatch]);
 
-  const onGetLaunchesSuccess = (response) => console.log(response);
-  const onGetLaunchesError = (err) => console.warn(err);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <Card>

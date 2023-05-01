@@ -74,20 +74,6 @@ function NavBar() {
                 </button>
               </li>
             </ul>
-            <div className="text-end">
-              <a
-                href="/"
-                className="align-items-center mb-2 me-2 mb-lg-0 text-white text-decoration-none"
-              >
-                Unknow User
-              </a>
-              <button type="button" className="btn btn-outline-light me-2">
-                Login
-              </button>
-              <button type="button" className="btn btn-warning">
-                Register
-              </button>
-            </div>
           </div>
         </div>
       </nav>
