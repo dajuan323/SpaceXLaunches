@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -9,13 +10,12 @@ function Home() {
             <div className="container-fluid py-5">
               <h1 className="display-5 fw-bold">SpaceX Launch Watch</h1>
               <p className="col-md-8 fs-4">
-                The button below should make an ajax call when clicked. Look at
-                your task details for more infomation about the specifics.
+                See all past and future launches of SpaceX.
               </p>
               <p>
-                <button className="btn btn-primary btn-lg">
-                  Make an Ajax Call on Click
-                </button>
+                <Link className="btn btn-primary btn-lg" to={"launches"}>
+                  See Launches
+                </Link>
               </p>
             </div>
           </div>
@@ -25,5 +25,4 @@ function Home() {
     </>
   );
 }
-
 export default Home;

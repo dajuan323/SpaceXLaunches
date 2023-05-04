@@ -5,6 +5,7 @@ using HDMSpaceX.Services;
 using Microsoft.AspNetCore.Cors;
 using HDMSpaceX.Models;
 using HDMSpaceX.Services.Interfaces;
+using HDMSpaceX.Web.Models.Responses;
 
 namespace HDMSpaceX.Controllers
 {
@@ -37,6 +38,76 @@ namespace HDMSpaceX.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+        [HttpGet("past")]
+        public async Task<ActionResult<List<Launch>>> GetPastLaunches(int limit, int offset)
+        {
+            try
+            {
+                var launches = await _launchService.GetPastLaunches(limit, offset);
+
+                if (launches == null || launches.Count == 0)
+                {
+                    return NoContent();
+                }
+
+                return Ok(launches);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        
+        [HttpGet("future")]
+        public async Task<ActionResult<List<Launch>>> GetFutureLaunches()
+        {
+            try
+            {
+                var launches = await _launchService.GetFutureLaunches();
+
+                if (launches == null || launches.Count == 0)
+                {
+                    return NoContent();
+                }
+
+                return Ok(launches);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ItemResponse<Launch>>> GetSingle(int id)
+        {
+
+            int iCode = 200;
+            BaseResponse? response = null;
+
+            try
+            {
+                Launch? launch = await _launchService.GetSingleLaunch(id);
+
+                if (launch == null)
+                {
+                    iCode = 404;
+                    response = new ErrorResponse("Profile not found");
+                }
+                else
+                {
+                    response = new ItemResponse<Launch> { Item = launch };
+                }
+            }
+
+            catch (Exception ex)
+            {
+                iCode = 500;
+                response = new ErrorResponse($"Generic Errors: ${ex.Message}");
+            }
+            return StatusCode(iCode, response);
         }
     }
 }

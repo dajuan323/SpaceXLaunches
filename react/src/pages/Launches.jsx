@@ -1,65 +1,107 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchLaunches } from "../app/launchSlice";
+import {  useParams } from "react-router-dom";
+import launchServices from "../services/launchServices";
+import LaunchTableRow from "../components/LaunchTableRow";
+import LaunchProfile from "./LaunchProfile";
+import LaunchPagination from "../components/LaunchPagination";
 
 function Launches() {
-  const dispatch = useDispatch();
-  const { launches, loading, error } = useSelector((state) => state.launches);
-
+  const { pageId } = useParams();
+  const [launches, setLaunches] = useState({
+    launchData: { launchArr: [], pastComponents: [], futureComponents: [] },
+    currentPage: 1,
+    totalPages: 0,
+    toggle: 1,
+  });
   useEffect(() => {
-    dispatch(fetchLaunches());
-  }, [dispatch]);
+    fetchLaunches(launches.currentPage);
+  }, [launches.currentPage]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const fetchLaunches = (page) => {
+    const limit = 20;
+    const offset = (page - 1) * limit;
 
-  if (error) {
-    return <div>{error}</div>;
-  }
+    launchServices
+      .getFutureLaunches(limit, offset)
+      .then(onGetFutureLaunchSuccess)
+      .catch(onGetLaunchFailure);
 
-  return (
+    launchServices
+      .getPastLaunches(limit, offset)
+      .then(onGetPastLaunchSuccess)
+      .catch(onGetLaunchFailure);
+  };
+  const onGetFutureLaunchSuccess = (response) => {
+    let newArr = response.data;
+    const totalLaunches = response.headers["spacex-api-count"];
+
+    setLaunches((prevState) => {
+      const pd = { ...prevState };
+      pd.launchArr = newArr;
+      pd.totalLaunches = totalLaunches;
+      pd.futureComponents = pd.launchArr.map(mapLaunch);
+      return pd;
+    });
+  };
+  const onGetPastLaunchSuccess = (response) => {
+    let newArr = response.data;
+    const totalLaunches = response.headers["spacex-api-count"];
+
+    setLaunches((prevState) => {
+      const pd = { ...prevState };
+      pd.launchArr = newArr;
+      pd.totalLaunches = totalLaunches;
+      pd.pastComponents = pd.launchArr.map(mapLaunch);
+      return pd;
+    });
+  };
+  const onToggleClick = () => {
+    setLaunches((prevState) => ({
+      ...prevState,
+      toggle: !prevState.toggle,
+    }));
+  };
+  const mapLaunch = (aLaunch, index) => {
+    return (
+      <LaunchTableRow launch={aLaunch} key={`${aLaunch.flightNumber}${index}`} />
+    );
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setLaunches((prevState) => {
+      const pd = { ...prevState };
+      pd.currentPage = pageNumber;
+      return pd;
+    });
+  };
+  const onGetLaunchFailure = (err) => console.warn(err);
+
+  return pageId ? (
+    <LaunchProfile launchId={pageId} />
+  ) : (
     <Card>
       <Card.Body>
-        <Link to="#" className="float-end">
-          Export <i className="mdi mdi-download ms-1"></i>
-        </Link>
-
-        <h4 className="header-title mt-2 mb-3">Launches</h4>
-
+        <LaunchPagination
+          currentPage={launches.currentPage}
+          onPageChange={handlePageChange}
+          totalPages={launches.totalPages}
+        />
+        <button onClick={onToggleClick}>
+          {launches.toggle ? "Past Launches" : "Future Launches"}
+        </button>
+        <h4 className="header-title mt-2 mb-3">
+          {launches.toggle ? "Past Launches" : "Future Launches"}
+        </h4>
         <Table hover responsive className="mb-0">
           <tbody>
-            {launches.map((launch) => (
-              <tr key={launch.flightNumber}>
-                <td>
-                  <h5 className="font-14 my-1 fw-normal">
-                    {launch.missionName}
-                  </h5>
-                  <span className="text-muted font-13">
-                    {launch.launchYear}
-                  </span>
-                </td>
-                <td>
-                  <h5 className="font-14 my-1 fw-normal">
-                    {launch.launchDateUtc}
-                  </h5>
-                  <span className="text-muted font-13">Launch Date UTC</span>
-                </td>
-                <td>
-                  <h5 className="font-14 my-1 fw-normal">
-                    {launch.launchDateLocal}
-                  </h5>
-                  <span className="text-muted font-13">Launch Date Local</span>
-                </td>
-              </tr>
-            ))}
+            {launches.toggle
+              ? launches.pastComponents
+              : launches.futureComponents}
           </tbody>
         </Table>
       </Card.Body>
     </Card>
   );
 }
-
 export default Launches;

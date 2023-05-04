@@ -2,10 +2,10 @@ import axios from "axios";
 
 const endpoint = "https://localhost:7116/api/launches";
 
-const getAllLaunches = (limit, offset) => {
+const getPastLaunches = (limit, offset) => {
   const config = {
     method: "GET",
-    url: `${endpoint}?limit=${limit}&offset=${offset}`,
+    url: `${endpoint}/past/?limit=${limit}&offset=${offset}`,
     crossdomain: true,
     withCredentials: true,
     headers: { "Content-Type": "application/json" },
@@ -13,5 +13,27 @@ const getAllLaunches = (limit, offset) => {
   return axios(config);
 };
 
-const civilianProfileService = { getAllLaunches };
-export default civilianProfileService;
+const getFutureLaunches = () => {
+  const config = {
+    method: "GET",
+    url: `${endpoint}/future`,
+    crossdomain: true,
+    withCredentials: true,
+    headers: { "Content-Type": "application/json" },
+  };
+  return axios(config);
+};
+
+const getLaunchById = (id) => {
+  const config = {
+    method: "GET",
+    url: `${endpoint}/${id}`,
+    crossdomain: true,
+    withCredentials: true,
+    headers: { "Content-Type": "application/json" },
+  };
+  return axios(config);
+};
+
+const launchServices = { getPastLaunches, getLaunchById, getFutureLaunches };
+export default launchServices;
