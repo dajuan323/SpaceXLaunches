@@ -1,6 +1,6 @@
-# SpaceX Launch Lookup App
+# 🚀 SpaceX Launch Lookup App
 
-Welcome to the SpaceX Launch Lookup App! This app allows you to easily look up information about past and future launches of SpaceX, including details such as launch dates, rocket names, and mission descriptions.
+Welcome to my SpaceX Launch Lookup App! This app allows you to easily look up information about past and future launches of SpaceX, including details such as launch dates, rocket names, and mission descriptions.
 
 ## Installation
 
