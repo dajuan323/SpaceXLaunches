@@ -187,22 +187,22 @@ function Rocket(props) {
                             Block: {rocket?.secondStage?.payloads[0]?.payloadId}
                           </li>
                           <li className="list-group-item">
-                            Block:
+                            Customers:
                             {rocket?.secondStage?.payloads[0]?.customers[0]}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Manufacturer:{" "}
                             {rocket?.secondStage?.payloads[0]?.manufacturer}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Nationality:{" "}
                             {rocket?.secondStage?.payloads[0]?.nationality}
                           </li>
                           <li className="list-group-item">
-                            Block: {rocket?.secondStage?.payloads[0]?.noradId}
+                            Norad Id: {rocket?.secondStage?.payloads[0]?.noradId}
                           </li>
                           <li className="list-group-item">
-                            Block: {rocket?.secondStage?.payloads[0]?.orbit}
+                            Orbit: {rocket?.secondStage?.payloads[0]?.orbit}
                           </li>
                           <li>
                             <div className="accordion-item">
@@ -225,105 +225,105 @@ function Rocket(props) {
                                 <div className="accordion-body">
                                   <ul>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Apoapsis Km:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.apoapsisKm
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Arg of Pericenter:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.argOfPericenter
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Eccentricity:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.eccentricity
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Epoch:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.epoch
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Inclination Deg:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.inclinationDeg
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Lifespan Years:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.lifespanYears
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Longitude:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.longitude
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Mean Anomaly:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.meanAnomaly
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Mean Motion:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.meanMotion
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Periapsis Km:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.periapsis_km
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Period Min:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.periodMin
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      RAAN:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.raan
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Reference System:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.referenceSystem
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Regime:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.regime
                                       }
                                     </li>
                                     <li className="list-group-item">
-                                      Block:{" "}
+                                      Semi-Major Axis Km:{" "}
                                       {
                                         rocket?.secondStage?.payloads[0]
                                           ?.orbitParams?.semiMajorAxisKm
@@ -335,22 +335,22 @@ function Rocket(props) {
                             </div>
                           </li>
                           <li className="list-group-item">
-                            Block: {rocket?.secondStage?.payloads[0]?.payloadId}
+                            Payload Id: {rocket?.secondStage?.payloads[0]?.payloadId}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Payload Mass Kg:{" "}
                             {rocket?.secondStage?.payloads[0]?.payloadMassKg}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Payload Mass Lbs.:{" "}
                             {rocket?.secondStage?.payloads[0]?.payloadMassLbs}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Payload Type:{" "}
                             {rocket?.secondStage?.payloads[0]?.payloadType}
                           </li>
                           <li className="list-group-item">
-                            Block:{" "}
+                            Re-used?:{" "}
                             {rocket?.secondStage?.payloads[0]?.reused.toString()}
                           </li>
                         </ul>

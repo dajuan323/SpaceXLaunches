@@ -82,13 +82,6 @@ function LaunchProfileBox(props) {
               </Col>
             </Row>
           </Col>
-          <Col sm={4}>
-            <div className="text-center mt-sm-0 mt-3 text-sm-end">
-              <button type="button" className="btn btn-light">
-                <i className="mdi mdi-account-edit me-1"></i> Edit Profile
-              </button>
-            </div>
-          </Col>
         </Row>
       </Card.Body>
     </Card>
