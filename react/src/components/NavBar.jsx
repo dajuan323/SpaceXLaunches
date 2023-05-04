@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../launchstyles.css"
 
 function NavBar() {
   return (
@@ -32,46 +34,14 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarsExample04">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
-                <button className="nav-link px-2 text-white link-button">
+                <Link className="nav-link px-2 text-white link-button" to={"/"}>
                   Home
-                </button>
+                </Link>
               </li>
               <li className="nav-item">
-                <button className="nav-link px-2 text-white link-button">
-                  Friends
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  href="#"
-                  className="nav-link px-2 text-white link-button"
-                >
-                  Jobs
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  href="#"
-                  className="nav-link px-2 text-white link-button"
-                >
-                  Tech Companies
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  href="#"
-                  className="nav-link px-2 text-white link-button"
-                >
-                  Events
-                </button>
-              </li>
-              <li className="nav-item">
-                <button
-                  href="#"
-                  className="nav-link px-2 text-white link-button"
-                >
-                  Test and Ajax Call
-                </button>
+                <Link className="nav-link px-2 text-white link-button" to={"launches"}>
+                  Past Launches
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,5 +50,4 @@ function NavBar() {
     </>
   );
 }
-
 export default NavBar;

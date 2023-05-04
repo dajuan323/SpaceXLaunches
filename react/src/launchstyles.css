@@ -1,0 +1,10 @@
+
+.profile-user-box {
+    background-color: black;
+}
+
+.fairings-list-group {
+    width: "50px";
+    max-width: "25%";
+    flex-direction: row;
+}
