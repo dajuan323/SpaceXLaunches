@@ -15,26 +15,43 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Setup node.js env
+      - uses: actions/setup-node@v2.5.0
         with:
           node-version: '16.x'
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+          
+      - name: React - Install dependencies
+        working-directory: react
+        run: yarn install --network-timoeout 1000000000
+        
+      - name: React - Yarn Build
+        working-directory: react
+        run: yarn build
+        
+      - name: React - Move Published Build
+        run: |
+          mkdir -p dotnet/Web.Api/ClientApp/
+          mv ./react/build dotnet/Web.Api/ClientApp
+      - name: DotNet - Set up .NET Core
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '7.x'
           include-prerelease: true
+      - name: DotNet - Install Dependencies and Restore
+        working-directory: dotnet
+        run: dotnet restore HDMSpaceX.sln
+        
+      - name: DotNet - Build
+        run: dotnet build HDMSpaceX.sln --configuration Release
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
-
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: DotNet - Publish
+        run: dotnet publish dotnet/HDMSpaceX -c Release -o ${{env.DOTNET_ROOT}}/HDMSpaceX
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ${{env.DOTNET_ROOT}}/HDMSpaceX
 
   deploy:
     runs-on: windows-latest
