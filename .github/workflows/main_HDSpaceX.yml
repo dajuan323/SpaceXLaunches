@@ -23,7 +23,7 @@ jobs:
         with:
           dotnet-version: '7.x'
           include-prerelease: true
-        node-version: '16.x'
+          node-version: '16.x'
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
