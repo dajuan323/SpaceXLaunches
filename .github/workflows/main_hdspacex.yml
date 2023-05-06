@@ -49,7 +49,7 @@ jobs:
         run: dotnet build ./HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
-        run: dotnet publish ./HDMSpaceX/HDMSpaceX.csproj -c Release -o "C:\Program Files\dotnet/HDMSpaceX"
+        run: dotnet publish ./HDMSpaceX.csproj -c Release -o "C:\Program Files\dotnet/HDMSpaceX"
 
 
 
