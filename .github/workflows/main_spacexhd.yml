@@ -27,8 +27,8 @@ jobs:
 
       - name: React - Move Published Build
         run: |
-          mkdir -p dotnet/HDMSpaceX.Web.Api/ClientApp/
-          mv ./react/build dotnet/HDMSpaceX.Web.Api/ClientApp/
+          mkdir -p dotnet/HDMSpaceX/ClientApp/
+          mv ./react/build dotnet/HDMSpaceX/ClientApp/
       - name: DotNet - Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
@@ -44,7 +44,7 @@ jobs:
         run: dotnet build HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
-        run: dotnet publish dotnet/HDMSpaceX.Web.Api -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
+        run: dotnet publish dotnet/HDMSpaceX/ -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
 
       - name: Upload Artifact for deployment job
         uses: actions/upload-artifact@v2
