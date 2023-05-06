@@ -49,7 +49,8 @@ jobs:
         run: dotnet build ./HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
-        run: dotnet publish ./HDMSpaceX/HDMSpaceX.csproj -c Release -o ".\bin\Release\net7.0\publish\HDMSpaceX"
+        run: dotnet publish ./HDMSpaceX/HDMSpaceX.csproj -c Release -o "C:\Program Files\dotnet/HDMSpaceX"
+
 
 
       - name: Upload artifact for deployment job
