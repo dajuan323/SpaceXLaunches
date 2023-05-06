@@ -33,22 +33,23 @@ jobs:
         run: |
           mkdir -p dotnet/Web.Api/ClientApp/
           mv ./react/build dotnet/Web.Api/ClientApp
+      
       - name: DotNet - Set up .NET Core
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '7.x'
           include-prerelease: true
+      
       - name: DotNet - Install Dependencies and Restore
         working-directory: dotnet
         run: dotnet restore HDMSpaceX.sln
         
       - name: DotNet - Build
-        env:
-          DOTNET_ROOT: C://SpaceXLaunches/dotnet/
+        working-directory: dotnet
         run: dotnet build HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
-        run: dotnet publish dotnet/HDMSpaceX -c Release -o ${{env.DOTNET_ROOT}}/HDMSpaceX
+        run: dotnet publish dotnet/Web.Api -c Release -o ${{env.DOTNET_ROOT}}/HDMSpaceX
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
