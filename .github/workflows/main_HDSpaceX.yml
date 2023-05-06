@@ -42,11 +42,11 @@ jobs:
       
       - name: DotNet - Install Dependencies and Restore
         working-directory: dotnet
-        run: dotnet restore HDMSpaceX.sln
+        run: dotnet restore ./HDMSpaceX.sln
         
       - name: DotNet - Build
         working-directory: dotnet
-        run: dotnet build HDMSpaceX.sln --configuration Release
+        run: dotnet build ./HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
         run: dotnet publish ./HDMSpaceX/HDMSpaceX.csproj -c Release -o ${{env.DOTNET_ROOT}}/HDMSpaceX
