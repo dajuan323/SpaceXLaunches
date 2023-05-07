@@ -7,7 +7,67 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABi7rg6kS3UGL+W7M6hn6OwAAAAACAAAAAAAQZgAAAAEAACAAAAAbQ0bEl+sgTiOdU4nA0vZtMdKr1VbZID00201J4HXxwwAAAAAOgAAAAAIAACAAAABoLGlmh6KyqsrTGZRLiOq9dLiZIsmOJYMUoFY+KKMc/IAAAABm29pOcKZ/O9ZDaXdHsHjVZJkO9sK/r+/TjYllXHZ2Jr6yo/3mZQHXzd4fABgxJTlep3sC5TqW7GF2CM0A8YXedArxYdaU4x/vyrqh9G97AuRgAUCbuIt9t3BG5FikCae4rPoisY/YPmCA9ldf9dIODlAI+r1hNpml9lLh57Tq2UAAAABU1jdV/fNZu32m5nrfBGlJeQM7nCj1fuHnDHrO+y5tlIqjudcFDCFpqgfZ5CayGgooGRo9dxCh7le1/3WnZWZ9</EncryptedPassword>
-    <History>False|2023-05-07T05:39:08.9410676Z;False|2023-05-07T01:35:07.0500776-04:00;</History>
+    <History>True|2023-05-07T13:07:09.3384009Z;True|2023-05-07T08:57:09.8965575-04:00;False|2023-05-07T08:51:43.8541998-04:00;False|2023-05-07T01:39:08.9410676-04:00;False|2023-05-07T01:35:07.0500776-04:00;</History>
     <LastFailureDetails />
+    <_PublishTargetUrl>ftps://waws-prod-blu-207.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/01/2023 03:45:46</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/01/2023 03:45:46</publishTime>
+    </File>
+    <File Include="Azure.Core.dll">
+      <publishTime>02/06/2023 10:27:54</publishTime>
+    </File>
+    <File Include="Azure.ResourceManager.ApiManagement.dll">
+      <publishTime>02/14/2023 23:07:46</publishTime>
+    </File>
+    <File Include="Azure.ResourceManager.dll">
+      <publishTime>02/10/2023 02:39:18</publishTime>
+    </File>
+    <File Include="HDMSpaceX.deps.json">
+      <publishTime>05/07/2023 09:06:33</publishTime>
+    </File>
+    <File Include="HDMSpaceX.dll">
+      <publishTime>05/07/2023 09:06:33</publishTime>
+    </File>
+    <File Include="HDMSpaceX.exe">
+      <publishTime>05/07/2023 09:06:33</publishTime>
+    </File>
+    <File Include="HDMSpaceX.pdb">
+      <publishTime>05/07/2023 09:06:33</publishTime>
+    </File>
+    <File Include="HDMSpaceX.runtimeconfig.json">
+      <publishTime>05/07/2023 09:06:33</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.OpenApi.dll">
+      <publishTime>12/06/2022 22:43:24</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>04/14/2020 18:39:12</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>09/26/2022 08:32:38</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>03/08/2023 02:09:54</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>07/19/2022 11:21:22</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>07/19/2022 11:21:38</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>07/19/2022 11:21:48</publishTime>
+    </File>
+    <File Include="System.Memory.Data.dll">
+      <publishTime>04/08/2021 12:45:54</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/07/2023 09:06:35</publishTime>
+    </File>
+  </ItemGroup>
 </Project>

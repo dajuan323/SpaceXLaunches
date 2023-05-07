@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apis2": {
+      "apiEndpoint": "https://spacexhdapi.azure-api.net/echo",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/SpaceXHDapi/apis/echo-api",
+      "type": "apis.azure"
+    }
+  }
+}

@@ -3,6 +3,14 @@
     "compute.appService1": {
       "restored": true,
       "restoreTime": "2023-05-07T05:02:34.1229925Z"
+    },
+    "apis1": {
+      "restored": true,
+      "restoreTime": "2023-05-07T12:50:21.9140163Z"
+    },
+    "apis2": {
+      "restored": true,
+      "restoreTime": "2023-05-07T12:50:26.9797024Z"
     }
   },
   "parameters": {
