@@ -44,7 +44,7 @@ jobs:
         run: dotnet build HDMSpaceX.sln --configuration Release
 
       - name: DotNet - Publish
-        run: dotnet publish dotnet/HDMSpaceX/ -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
+        run: dotnet publish dotnet/HDMSpaceX/HDMSpaceX.csproj -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
 
       - name: Upload Artifact for deployment job
         uses: actions/upload-artifact@v2

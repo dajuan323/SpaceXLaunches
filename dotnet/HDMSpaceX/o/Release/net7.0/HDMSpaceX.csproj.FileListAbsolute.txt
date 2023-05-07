@@ -1,7 +1,0 @@
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.csproj.AssemblyReference.cache
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.GeneratedMSBuildEditorConfig.editorconfig
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.AssemblyInfoInputs.cache
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.AssemblyInfo.cs
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.csproj.CoreCompileInputs.cache
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.MvcApplicationPartsAssemblyInfo.cs
-C:\SpaceXLaunches\dotnet\HDMSpaceX\o\Release\net7.0\HDMSpaceX.MvcApplicationPartsAssemblyInfo.cache
