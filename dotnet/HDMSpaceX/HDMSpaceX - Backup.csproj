@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseIntermediateOutputPath>o</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>Web.Models\bin\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,4 +19,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Web.Models\obj\Debug\" />
+    <Folder Include="Web.Models\obj\Release\" />
+  </ItemGroup>
+
 </Project>
+
