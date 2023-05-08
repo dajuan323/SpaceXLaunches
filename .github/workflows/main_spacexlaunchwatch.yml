@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-    env:
-      DOTNET_ROOT: 'C:\SpaceXLaunches\dotnet'
+    runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v3
@@ -38,17 +36,12 @@ jobs:
       - name: DotNet - Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "7.0.202"
+          dotnet-version: "7.x"
           include-prerelease: true
           
       - name: DotNet - Install Dependencies and Restore
         working-directory: dotnet
         run: dotnet restore SpaceXLaunchWatch.sln
-
-      - name: Set DOTNET_ROOT
-        run: |
-          echo "Setting DOTNET_ROOT"
-          echo "::set-env name=DOTNET_ROOT::C:\SpaceXLaunches\dotnet"
 
       - name: Build with dotnet
         run: dotnet build SpaceXLaunchWatch.sln --configuration Release
@@ -63,7 +56,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/SpaceXLaunches
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
