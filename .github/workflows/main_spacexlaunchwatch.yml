@@ -44,7 +44,7 @@ jobs:
         run: dotnet restore SpaceXLaunchWatch.sln
 
       - name: Build with dotnet
-        run: dotnet build SpaceXLaunchWatch.sln --configuration Release
+        run: dotnet build C:\SpaceXLaunches\SpaceXLaunchWatch.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish dotnet/ -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
