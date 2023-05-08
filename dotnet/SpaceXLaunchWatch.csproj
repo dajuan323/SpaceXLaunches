@@ -12,12 +12,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="obj/Release/net7.0/apphost">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DestinationFolder>bin/Release/net7.0/</DestinationFolder>
-    </Content>
-  </ItemGroup>
+  <PropertyGroup>
+    <OutputPath>bin/Release/net7.0</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputType>Exe</OutputType>
+    <TargetName>SpaceXLaunchWatch</TargetName>
+    <DestinationFolder>bin/Release/net7.0/</DestinationFolder>
+  </PropertyGroup>
   
 
 </Project>
