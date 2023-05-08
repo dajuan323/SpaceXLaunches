@@ -41,6 +41,9 @@ jobs:
           dotnet-version: "7.0.202"
           include-prerelease: true
           
+      - name: Print DOTNET_ROOT value
+        run: echo $DOTNET_ROOT
+          
       - name: DotNet - Install Dependencies and Restore
         working-directory: dotnet
         run: dotnet restore SpaceXLaunchWatch.sln
@@ -48,8 +51,6 @@ jobs:
       - name: Build with dotnet
         run: dotnet build SpaceXLaunchWatch.sln --configuration Release
         
-      - name: Print DOTNET_ROOT value
-        run: echo $DOTNET_ROOT
 
       - name: dotnet publish
         run: dotnet publish dotnet/ -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
