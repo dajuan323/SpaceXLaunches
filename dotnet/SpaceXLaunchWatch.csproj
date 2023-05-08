@@ -12,5 +12,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="obj/Release/net7.0/apphost">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DestinationFolder>bin/Release/net7.0/</DestinationFolder>
+    </Content>
+  </ItemGroup>
+  
 
 </Project>
