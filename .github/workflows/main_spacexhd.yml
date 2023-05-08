@@ -69,7 +69,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "SpaceXHD"
+          app-name: "SpaceXLaunchWatch"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B83D2603C3A7473ABD457E9E11B71D9C }}
           package: .
