@@ -41,7 +41,7 @@ jobs:
           
       - name: DotNet - Install Dependencies and Restore
         working-directory: dotnet
-        run: dotnet restore HDMSpaceX.sln
+        run: dotnet restore SpaceXLaunchWatch.sln
 
       - name: Build with dotnet
         run: dotnet build SpaceXLaunchWatch.sln --configuration Release
