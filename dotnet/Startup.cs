@@ -26,7 +26,7 @@ namespace SpaceXLaunchWatch
             services.AddHttpClient();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HDMSpaceX", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SpaceXLaunchWatch", Version = "v1" });
             });
             services.AddScoped<ILaunchService, LaunchService>();
             services.AddCors(options =>
@@ -64,7 +64,7 @@ namespace SpaceXLaunchWatch
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "HDMSpaceX");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpaceXLaunchWatch");
             });
 
 
