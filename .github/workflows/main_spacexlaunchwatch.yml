@@ -47,6 +47,9 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build SpaceXLaunchWatch.sln --configuration Release
+        
+      - name: Print DOTNET_ROOT value
+        run: echo $DOTNET_ROOT
 
       - name: dotnet publish
         run: dotnet publish dotnet/ -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
