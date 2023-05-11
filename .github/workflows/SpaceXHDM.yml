@@ -51,7 +51,7 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: |
           <publishData>
-            <publishProfile profileName="SpaceXHD - Web Deploy" publishMethod="MSDeploy" publishUrl="spacexhd.scm.azurewebsites.net:443" msdeploySite="SpaceXHD" userName="$SpaceXHD" userPWD="4jd1YfcuZlBAes1Ec
+            <publishProfile profileName="SpaceXHD - Web Deploy" publishMethod="MSDeploy" publishUrl="https://spacexhd.scm.azurewebsites.net:443/msdeploy.axd" msdeploySite="SpaceXHD" userName="$SpaceXHD" userPWD="4jd1YfcuZlBAes1Ec
           </publishData>
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         slot-name: production
