@@ -24,7 +24,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
 
     - name: Build .NET Core project
-      run: dotnet build ./dotnet/SpaceXLaunches.csproj --configuration Release
+      run: dotnet build ./dotnet/ --configuration Release
 
     - name: Install Node.js
       uses: actions/setup-node@v2
