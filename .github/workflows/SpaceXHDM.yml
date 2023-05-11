@@ -49,9 +49,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: |
-          <publishData>
-            <publishProfile profileName="SpaceXHD - Web Deploy" publishMethod="MSDeploy" publishUrl="https://spacexhd.scm.azurewebsites.net:443/msdeploy.axd" msdeploySite="SpaceXHD" userName="$SpaceXHD" userPWD="4jd1YfcuZlBAes1Ec"></publishProfile>
-          </publishData>
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         slot-name: production
