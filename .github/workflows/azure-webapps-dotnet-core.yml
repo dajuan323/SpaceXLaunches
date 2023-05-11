@@ -63,7 +63,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ${{env.DOTNET_ROOT}}/publish
           
       - name: Install Node.js
         uses: actions/setup-node@v2
@@ -88,7 +88,7 @@ jobs:
     needs: build
     environment:
       name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: 'spacexhd.azurewebsites.net'
 
     steps:
       - name: Download artifact from build job
