@@ -24,11 +24,11 @@ jobs:
 
       - name: Build with dotnet
         working-directory: dotnet
-        run: dotnet build Web.Models/SpaceXLaunchWatch.sln --configuration Release
+        run: dotnet build SpaceXLaunchWatch.sln --configuration Release
 
       - name: dotnet publish
         working-directory: dotnet
-        run: dotnet publish Web.Models/SpaceXLaunchWatch.csproj -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
+        run: dotnet publish Web.Models/Web.Models.csproj -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
