@@ -23,10 +23,12 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ./Web.Models/SpaceXLaunchWatch.sln --configuration Release
+        working-directory: dotnet
+        run: dotnet build Web.Models/SpaceXLaunchWatch.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./Web.Models/SpaceXLaunchWatch.csproj -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
+        working-directory: dotnet
+        run: dotnet publish Web.Models/SpaceXLaunchWatch.csproj -c Release -o ${{env.DOTNET_ROOT}}/SpaceXLaunches
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
