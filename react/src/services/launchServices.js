@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endpoint = "https://localhost:7116/api/launches";
+const endpoint = "https://localhost:7126/api/launches";
 
 const getPastLaunches = (limit, offset) => {
   const config = {

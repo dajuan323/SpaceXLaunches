@@ -33,10 +33,14 @@ namespace SpaceXLaunchWatch
             {
                 options.AddPolicy("CorsPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
+                    builder
+                    .WithOrigins("http://localhost:3000", "https://launchwatch.azurewebsites.net/")
+                    //.AllowAnyOrigin()
+                    //.SetIsOriginAllowed(_ => true)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+                    //.SetIsOriginAllowedToAllowWildcardSubdomains();
                 });
             });
 
