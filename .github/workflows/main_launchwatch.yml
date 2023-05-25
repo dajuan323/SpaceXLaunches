@@ -14,7 +14,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - uses: actions/checkout@v3
+      - name: Setup node.js env
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: "14.x"
+
+      - name: React - Install dependencies
+        working-directory: react
+        run: yarn install --network-timeout 1000000000
+
+      - name: React - Yarn Build
+        working-directory: react
+        run: yarn build
+
+      - name: React - Move Published Build
+        run: |
+          mkdir -p dotnet/Web.Api/ClientApp/
+          mv ./react/build dotnet/Web.Api/ClientApp/
+    
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
